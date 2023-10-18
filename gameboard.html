@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="assets/JS/script.js"></script>
+    <script src="https://kit.fontawesome.com/d94f1f75f6.js" crossorigin="anonymous"></script>
+    <!-- font awesome icons
+    <i class="fa-solid fa-house" style="color: #000000;"></i>
+    <i class="fa-solid fa-question" style="color: #000000;"></i>
+    -->
 </head>
-<body>
-<section>
-    <div>Round couter</div>
-    <div>back button and info button</div>
+<body class="center">
+<section class="gametop">
+    <div class="gametopbox" id="roundCounter"><h1>Round:</h1><p id="roundNumber"></p></div>
+    <div class="gametopbox">
+        <ul id="infohome">
+            <li><button class="buttongame"><i class="fa-solid fa-question" style="color: #000000;"></i></button></li>
+            <li><button class="buttongame"><i class="fa-solid fa-house" style="color: #000000;"></i></button></li>
+        </ul>
+    </div>
 </section>
-<section>
-    gameboard
+<section id="gameboard">
+    <div class="selector-outer">
+        <div class="selector" id="purple"></div>
+        <div class="selector" id="green"></div>
+    </div>
+    <div class="selector-outer">
+        <div class="selector" id="red"></div>
+        <div class="selector" id="blue"></div>
+    </div>
 </section>
 <section>
     <div>tracker outer
