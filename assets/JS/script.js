@@ -1,11 +1,11 @@
 // info popup functions
 
+//variables
 let infoOpen = document.getElementById('info-open');
 let infoContainer = document.getElementById('info-container');
 let infoClose = document.getElementById('info-close');
 
-console.log(infoOpen)
-
+//functions
 infoOpen.addEventListener('click', function(){
     infoContainer.style.display = 'block';
 })
@@ -27,9 +27,14 @@ document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelector('body').style.opacity = 1
 })
 
+// game code
+
+//variables
+var lv = (4);
+
+//functions
 
 // testing for game array
-var lv = (4);
 /**
  * function to start the game
  */
