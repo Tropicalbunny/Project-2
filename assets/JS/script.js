@@ -26,3 +26,17 @@ window.transitionToPage = function(href) {
 document.addEventListener('DOMContentLoaded', function(event) {
     document.querySelector('body').style.opacity = 1
 })
+
+
+// testing for game array
+let lv = (8);
+var myArray = [];
+for (let i = 1; i <= lv ; i++ ) {
+    var q = Math.floor(Math.random() * 3);
+    myArray.push(q)
+}
+console.log(myArray)
+console.log(myArray[1])
+console.log(myArray[2])
+console.log(myArray[3])
+console.log(myArray[4])
