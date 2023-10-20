@@ -5,7 +5,7 @@
 
 
 //variables
-var lv = (3);
+var lv = (6);
 var gameArray = []
 let startButton = document.getElementById('startbutton')
 let startButtonContainer = document.getElementById('startbutton-container')
@@ -54,33 +54,36 @@ function round(){
     document.getElementById("roundNumber").innerText = ++oldRound;
 }
 
+/**
+ * this changes the images depending on the number in the string
+ */
 function play(gameArray){
     console.log(gameArray)
     for (let i = 0; i < lv ; i++){
         setTimeout(() => {
         console.log(gameArray[i])
 
-        if (gameArray[i] = 1){
-            purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center';
+        if (gameArray[i] === 1){
+            purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
             setTimeout(() => {
-            purple.style.background = 'url("assets/images/purple.png") no-repeat center center';  
+            purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
             },2000)
-        } else if (gameArray[i] = 2){
-            green.style.background = 'url("assets/images/greenlit.png") no-repeat center center';
+        } else if (gameArray[i] === 2){
+            green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
             setTimeout(() => {
-            green.style.background = 'url("assets/images/green.png") no-repeat center center';  
+            green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
             },2000)
-        } else if (gameArray = 3 ){
-            red.style.background = 'url("assets/images/redlit.png") no-repeat center center';
+        } else if (gameArray[i] === 3 ){
+            red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
             setTimeout(() => {
-            red.style.background = 'url("assets/images/red.png") no-repeat center center';  
+            red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
             },2000)
         } else {
-            blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center';
+            blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
             setTimeout(() => {
-            blue.style.background = 'url("assets/images/blue.png") no-repeat center center';  
+            blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
             },2000)
         }
 
-    },3000 * i)}
+    },2500 * i)}
 }

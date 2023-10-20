@@ -91,20 +91,16 @@ body {
     margin: 1px;
 }
 #purple{
-    Background: url("../images/purple.png") no-repeat center center;
-    background-size: cover;
+    Background: url("../images/purple.png") no-repeat center center /cover;
 }
 #green {
-    Background: url("../images/green.png") no-repeat center center;
-    background-size:cover;
+    Background: url("../images/green.png") no-repeat center center /cover;
 }
 #red {
-    Background: url("../images/red.png") no-repeat center center;
-    background-size: cover;
+    Background: url("../images/red.png") no-repeat center center /cover;
 }
 #blue {
-    Background: url("../images/blue.png") no-repeat center center;
-    background-size: cover;
+    Background: url("../images/blue.png") no-repeat center center /cover;
 }
 /* tracker styles */
 #trackerouter{
