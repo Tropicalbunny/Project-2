@@ -91,19 +91,19 @@ body {
     margin: 1px;
 }
 #purple{
-    Background: url("../Images/purple.png") no-repeat center center;
+    Background: url("../images/purple.png") no-repeat center center;
     background-size: cover;
 }
 #green {
-    Background: url("../Images/green.png") no-repeat center center;
+    Background: url("../images/green.png") no-repeat center center;
     background-size:cover;
 }
 #red {
-    Background: url("../Images/red.png") no-repeat center center;
+    Background: url("../images/red.png") no-repeat center center;
     background-size: cover;
 }
 #blue {
-    Background: url("../Images/blue.png") no-repeat center center;
+    Background: url("../images/blue.png") no-repeat center center;
     background-size: cover;
 }
 /* tracker styles */
@@ -124,7 +124,7 @@ body {
 }
 
 
-/* styling for popup */
+/* styling for info popup */
 #info{
     background-color: #1E1E1E;
     position: absolute;
@@ -140,7 +140,7 @@ body {
 #info-image{
     width:410px;
     height:300px;
-    background: url("../Images/Instructions.png") no-repeat center center;
+    background: url("../images/Instructions.png") no-repeat center center;
     background-size: cover;
 }
 #info-close{
@@ -159,4 +159,20 @@ body {
     height:100%;
     z-index: 1;
 }
-
+/* game start button styles */
+#startbutton-container{
+    position: absolute;
+    height:50px;
+    width: 100px;
+    left: 50%;
+    top:65%;
+    transform: translate(-50%, -35%);
+}
+#startbutton{
+ height: inherit;
+ width: inherit;
+ background-color: #D9D9D9 ;
+}
+#startbutton:hover{
+    background-color: aqua;
+}
