@@ -29,11 +29,30 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
 
 // testing for game array
-let lv = (8);
+var lv = (4);
+/**
+ * function to start the game
+ */
+function start(){
+    var lv = lv++
+    buildQuestion()
+    round()
+}
+/**
+ * this builds an array for the game, allowing to be random and incremented for each round
+ */
+function buildQuestion() {
 var myArray = [];
 for (let i = 1; i <= lv ; i++ ) {
     var q = Math.floor(Math.random() * 3);
     myArray.push(q)
+}}
+/**
+ * this increments the round counter
+ */
+function round(){
+    let oldRound = parseInt(document.getElementById('roundCounter').innerText)
+    document.getElementById('roundCounter').innterText = ++oldRound
 }
 console.log(myArray)
 console.log(myArray[1])
