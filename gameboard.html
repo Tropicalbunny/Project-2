@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="assets/css/style.css" rel="stylesheet">
-    <script src="assets/JS/script.js"></script>
     <script src="https://kit.fontawesome.com/d94f1f75f6.js" crossorigin="anonymous"></script>
     <!-- font awesome icons
     <i class="fa-solid fa-house" style="color: #000000;"></i>
@@ -17,8 +16,8 @@
     <div class="gametopbox" id="roundCounter"><h1>Round:</h1><p id="roundNumber"></p></div>
     <div class="gametopbox">
         <ul id="infohome">
-            <li><button class="buttongame"><i class="fa-solid fa-question" id="info-open2" style="color: #000000;"></i></button></li>
-            <li><button class="buttongame"><i class="fa-solid fa-house" style="color: #000000;"></i></button></li>
+            <li><button class="buttongame" id="info-open"><i class="fa-solid fa-question"  style="color: #000000;"></i></button></li>
+            <li><button class="buttongame" id="home" onclick="transitionToPage('index.html')"><i class="fa-solid fa-house" style="color: #000000;"></i></button></li>
         </ul>
     </div>
 </section>
@@ -38,5 +37,12 @@
         </div>
     </div>
 </section>
+<div id="info-container">
+    <div id="info">
+        <div id="info-image"></div>
+        <div id="info-close">&times;</div>
+    </div>
+</div>
+<script src="assets/JS/script.js"></script>
 </body>
 </html>
