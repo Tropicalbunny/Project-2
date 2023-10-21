@@ -25,6 +25,9 @@ body {
     border-radius: 15px;
     margin: auto;
 }
+.initbuttons:hover{
+    background-color: aqua;
+}
 .button-holder{
     margin: 50px auto;
     position: relative;
@@ -206,4 +209,24 @@ body {
 }
 #startbutton:hover{
     background-color: aqua;
+}
+/* win and lose pop styles */
+.winlose{
+    height:70px;
+    width:450px;
+    padding:30px;
+    margin: auto;
+    border-radius: 20px;
+    background: #403e3e;
+    position:absolute;
+    left: 50%;
+    top:30%;
+    transform:translate(-50%);
+}
+#win{
+    display: none;
+}
+
+#lose{
+    display:none;
 }
