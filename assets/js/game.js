@@ -5,9 +5,10 @@
 
 
 //variables
-var lv = (2);
+var lv = 2;
 var gameArray = []
 var guessArray = []
+var on = false
 
 let startButton = document.getElementById('startbutton')
 let startButtonContainer = document.getElementById('startbutton-container')
@@ -18,26 +19,44 @@ let blue = document.getElementById('blue')
 let checkButton = document.getElementById('checkButton')
 let trackerInner = document.getElementById('trackerinner')
 
+let win = document.getElementById('win')
+let lose = document.getElementById('lose')
+let nextLevel = document.getElementById('nextlevel')
+let home = document.getElementById('home1', 'home2')
+let restart = document.getElementById('restart')
+
+nextLevel.addEventListener('click', function(){
+    win.style.display = 'none';
+    startButtonContainer.style.display = 'block';
+    $('#trackerinner').children().remove()
+
+})
 
 startButton.addEventListener('click', function(){
     startButtonContainer.style.display = 'none';
-    var lv = lv++;
-    var gameArray = buildQuestion()
+    resetArray()
+    var gameArray = buildQuestion(lv)
     round()
     play(gameArray)
+
 })
 //functions
 
 /**
  * this builds an array for the game, allowing to be random and incremented for each round
  */
-function buildQuestion(){
+function resetArray(array){
+    array = []
+    guessArray = array
+    return guessArray
+}
+function buildQuestion(lv){
     var myArray = [];
     for (let i = 1; i <= lv ; i++ ) {
     var q = Math.floor(Math.random() * 4 ) + 1;
     myArray.push(q)
     }
-console.log(myArray)
+console.log('build', myArray)
 var gameArray = myArray
 return gameArray
 }
@@ -54,7 +73,7 @@ function round(){
  * this changes the images depending on the number in the Array
  */
 function play(gameArray){
-    console.log(gameArray)
+    console.log('play', gameArray)
     for (let i = 0; i < lv ; i++){
         setTimeout(() => {
         console.log(gameArray[i])
@@ -83,30 +102,9 @@ function play(gameArray){
 
     },2500 * i)}
     setTimeout(() => {
-        guesses()
-        /* this connects to the back button, to remove from the array and remove divs*/
-        backButton.addEventListener('click', function(){
-            guessArray.pop();
-            console.log(guessArray)
-            $('#trackerinner').children().last().remove()
-        })
-        /* this checks the two arrays to see if they match*/
-        checkButton.addEventListener('click', function(){
-            let array1 = gameArray
-            let array2 = guessArray
-            console.log('gamearray', array1)
-            console.log('guessarray', array2)
-            /* lines 100 and 101 taken from stack overflow */
-            var matching = (array1.length == array2.length) && array1.every(function(element, index){
-                return element === array2[index]
-            })
-            console.log(matching)
-                if(matching === true){
-                    console.log('you won')
-                }else {
-                    console.log('you lost')
-        }
-        })
+        on = true;
+        // guesses()
+       
 },2000 * lv)
 }
 
@@ -115,47 +113,80 @@ function play(gameArray){
 /**
  * function that listens for input from user
  */
-function guesses(){
-purple.addEventListener('click', function(){
-    var q = 1
-    console.log(q)
-    guessArray.push(q)
-    console.log(guessArray)
-    purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
-    addBlock(q)
-    setTimeout(() => {
-    purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
-    },500)})
-green.addEventListener('click', function(){
-    var q = 2
-    console.log(q)
-    guessArray.push(q)
-    console.log(guessArray)
-    green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
-    addBlock(q)
-    setTimeout(() => {
-    green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
-    },500)})
-red.addEventListener('click', function(){
-    var q = 3
-    console.log(q)
-    guessArray.push(q)
-    console.log(guessArray)
-    red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
-    addBlock(q)
-    setTimeout(() => {
-    red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
-    },500)})
-blue.addEventListener('click', function(){
-    var q = 4
-    console.log(q)
-    guessArray.push(q)
-    console.log(guessArray)
-    blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
-    addBlock(q)
-    setTimeout(() => {
-    blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
-    },500)})}
+// function guesses(){
+    if (on = true){
+     /* this connects to the back button, to remove from the array and remove divs*/
+     backButton.addEventListener('click', function(){
+        guessArray.pop();
+        console.log(guessArray)
+        $('#trackerinner').children().last().remove()
+        })
+    /* this checks the two arrays to see if they match*/
+    checkButton.addEventListener('click', function(){
+        on = false;
+        let array1 = gameArray
+        let array2 = guessArray
+        console.log('gamearray', array1)
+        console.log('guessarray', array2)
+        /* lines 100 and 101 taken from stack overflow */
+        var matching = (array1.length == array2.length) && array1.every(function(element, index){
+            return element === array2[index]
+    })
+        console.log(matching)
+            if(matching === true){
+                console.log('you won')
+                win.style.display = 'block';
+                var newLv = lv
+                console.log('before', newLv)
+                var newLv = ++newLv;
+                console.log('after', newLv)
+                lv = newLv
+                return
+            }else {
+                console.log('you lost')
+                lose.style.display = 'block';
+                return
+        }
+        })    
+
+
+    purple.addEventListener('click', function(){
+        var q = 1
+        console.log(q)
+        guessArray.push(q)
+        purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
+        },500)})
+    green.addEventListener('click', function(){
+        var q = 2
+        console.log(q)
+        guessArray.push(q)
+        green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
+        },500)})
+    red.addEventListener('click', function(){
+        var q = 3
+        console.log(q)
+        guessArray.push(q) 
+        red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
+        },500)})
+    blue.addEventListener('click', function(){
+        var q = 4
+        console.log(q)
+        guessArray.push(q)
+        blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
+        },500)})}
+    
 
     /**
      * this function adds a block each time a guess is made 
