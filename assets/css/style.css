@@ -168,6 +168,7 @@ body {
  height: inherit;
  width: inherit;
  background-color: #D9D9D9 ;
+ border-radius: 10px;
 }
 #startbutton:hover{
     background-color: aqua;

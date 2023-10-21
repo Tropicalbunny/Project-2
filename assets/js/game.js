@@ -5,8 +5,9 @@
 
 
 //variables
-var lv = (6);
+var lv = (2);
 var gameArray = []
+var guessArray = []
 let startButton = document.getElementById('startbutton')
 let startButtonContainer = document.getElementById('startbutton-container')
 let purple = document.getElementById('purple')
@@ -23,15 +24,6 @@ startButton.addEventListener('click', function(){
 })
 //functions
 
-// testing for game array
-/**
- * function to start the game
- */
-function start(){
-    var lv = lv++
-    buildQuestion()
-    round()
-}
 /**
  * this builds an array for the game, allowing to be random and incremented for each round
  */
@@ -55,14 +47,14 @@ function round(){
 }
 
 /**
- * this changes the images depending on the number in the string
+ * this changes the images depending on the number in the Array
  */
 function play(gameArray){
     console.log(gameArray)
     for (let i = 0; i < lv ; i++){
         setTimeout(() => {
         console.log(gameArray[i])
-
+            
         if (gameArray[i] === 1){
             purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
             setTimeout(() => {
@@ -86,4 +78,72 @@ function play(gameArray){
         }
 
     },2500 * i)}
+    setTimeout(() => {
+        guesses()
+        check(gameArray, guessArray)
+
+},2000 * lv)
 }
+
+
+
+/**
+ * function that listens for input from user
+ */
+function guesses(){
+purple.addEventListener('click', function(){
+    var q = 1
+    console.log(q)
+    guessArray.push(q)
+    console.log(guessArray)
+    purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
+    setTimeout(() => {
+    purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
+    },500)})
+green.addEventListener('click', function(){
+    var q = 2
+    console.log(q)
+    guessArray.push(q)
+    console.log(guessArray)
+    green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
+    setTimeout(() => {
+    green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
+    },500)})
+red.addEventListener('click', function(){
+    var q = 3
+    console.log(q)
+    guessArray.push(q)
+    console.log(guessArray)
+    red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
+    setTimeout(() => {
+    red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
+    },500)})
+blue.addEventListener('click', function(){
+    var q = 4
+    console.log(q)
+    guessArray.push(q)
+    console.log(guessArray)
+    blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
+    setTimeout(() => {
+    blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
+    },500)})}
+
+    /**
+     * This function checks generated array to the guessed array from the user.
+     */
+ function check(array1, array2){
+        console.log('gamearray', array1)
+        console.log('guessarray', array2)
+        if(array1.length = array2.length){
+            console.log('good')
+            if(array1 === array2){
+                console.log('you won')
+            }else {
+                console.log('you lost')
+            }
+        }else{
+            var one = gameArray
+            var two = guessArray
+            console.log('bad')
+            window.setTimeout(check(), 1000);
+        }}
