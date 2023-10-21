@@ -8,12 +8,16 @@
 var lv = (2);
 var gameArray = []
 var guessArray = []
+
 let startButton = document.getElementById('startbutton')
 let startButtonContainer = document.getElementById('startbutton-container')
 let purple = document.getElementById('purple')
 let green = document.getElementById('green')
 let red = document.getElementById('red')
 let blue = document.getElementById('blue')
+let checkButton = document.getElementById('checkButton')
+let trackerInner = document.getElementById('trackerinner')
+
 
 startButton.addEventListener('click', function(){
     startButtonContainer.style.display = 'none';
@@ -80,8 +84,24 @@ function play(gameArray){
     },2500 * i)}
     setTimeout(() => {
         guesses()
-        check(gameArray, guessArray)
-
+        /* this connects to the back button, to remove from the array and remove divs*/
+        backButton.addEventListener('click', function(){
+            guessArray.pop();
+            console.log(guessArray)
+            $('#trackerinner').children().last().remove()
+        })
+        /* this checks the two arrays to see if they match*/
+        checkButton.addEventListener('click', function(){
+            let array1 = gameArray
+            let array2 = guessArray
+            console.log('gamearray', array1)
+            console.log('guessarray', array2)
+                if(array1 === array2){
+                    console.log('you won')
+                }else {
+                    console.log('you lost')
+        }
+        })
 },2000 * lv)
 }
 
@@ -97,6 +117,7 @@ purple.addEventListener('click', function(){
     guessArray.push(q)
     console.log(guessArray)
     purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
+    addBlock(q)
     setTimeout(() => {
     purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
     },500)})
@@ -106,6 +127,7 @@ green.addEventListener('click', function(){
     guessArray.push(q)
     console.log(guessArray)
     green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
+    addBlock(q)
     setTimeout(() => {
     green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
     },500)})
@@ -115,6 +137,7 @@ red.addEventListener('click', function(){
     guessArray.push(q)
     console.log(guessArray)
     red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
+    addBlock(q)
     setTimeout(() => {
     red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
     },500)})
@@ -124,26 +147,34 @@ blue.addEventListener('click', function(){
     guessArray.push(q)
     console.log(guessArray)
     blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
+    addBlock(q)
     setTimeout(() => {
     blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
     },500)})}
 
     /**
-     * This function checks generated array to the guessed array from the user.
+     * this function adds a block each time a guess is made 
      */
- function check(array1, array2){
-        console.log('gamearray', array1)
-        console.log('guessarray', array2)
-        if(array1.length = array2.length){
-            console.log('good')
-            if(array1 === array2){
-                console.log('you won')
-            }else {
-                console.log('you lost')
-            }
-        }else{
-            var one = gameArray
-            var two = guessArray
-            console.log('bad')
-            window.setTimeout(check(), 1000);
-        }}
+    function addBlock(color){
+        console.log('color', color)
+        if (color === 1){
+            var block = document.createElement('div')
+            block.classList.add('blockpurple')
+            trackerInner.appendChild(block)
+        } else if(color === 2){
+            var block = document.createElement('div')
+            block.classList.add('blockgreen')
+            trackerInner.appendChild(block)            
+        } else if(color === 3){
+            var block = document.createElement('div')
+            block.classList.add('blockred')
+            trackerInner.appendChild(block)            
+        } else if(color === 4){
+            var block = document.createElement('div')
+            block.classList.add('blockblue')
+            trackerInner.appendChild(block)            
+        } else {
+            throw 'error, color ${color}. Abort!';
+        }
+
+    }
