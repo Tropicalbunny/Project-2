@@ -96,7 +96,12 @@ function play(gameArray){
             let array2 = guessArray
             console.log('gamearray', array1)
             console.log('guessarray', array2)
-                if(array1 === array2){
+            /* lines 100 and 101 taken from stack overflow */
+            var matching = (array1.length == array2.length) && array1.every(function(element, index){
+                return element === array2[index]
+            })
+            console.log(matching)
+                if(matching === true){
                     console.log('you won')
                 }else {
                     console.log('you lost')
