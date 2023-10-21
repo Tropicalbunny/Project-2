@@ -68,8 +68,8 @@ the main goal of this website is to create a positive, fun experience that will 
 ----
 
 ## Design
-![idea 1](assets\images\idea1.png "idea2")
+![idea 1](assets/images/idea1.png "idea2")
 This was the basic idea i was trying. Originally i wanted to go for a retro style game with a game input board, however i decided this was too bulky and not really easy to navigate. i decided to recreate with the idea below.
-![idea 2](assets\images\idea2.png "idea1")
+![idea 2](assets/images/idea2.png "idea1")
 This is the final idea i settled with. minimalist and easy, i felt this created a more positive enviroment for people to enjoy the game.
 in this i removed the input board and decided to use the central buttons instead
