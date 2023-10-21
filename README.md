@@ -15,10 +15,9 @@ Live Site
     - [New User Goals](#new-user-goals)
     - [Returning User Goals](#returning-user-goals)
   - [Project Goals](#project-goals)
-  - [Business Goals](#business-goals)
   - [Minimum Acceptance Criteria](#minimum-acceptance-criteria)
 - [Development](#development)
-  - [Final Idea](#final-idea)
+  - [Design](#Design)
     - [Notable Design Decisions](#notable-design-decisions)
   - [Testing](#testing)
     - [Pre code Testing](#pre-code-testing)
@@ -42,3 +41,35 @@ Live Site
 # UX
 ----
 ## User Sories
+The main end user goal is to have a fun, stress free time.
+
+### New User Goals
+
+* I would expect a bug free game
+* I would expect clear intructions on the game and how it works
+* I would like a sleek design that is clear and easy to navigate
+
+### Returning User Goals
+
+* i would like to be able to dive staight into the game without needing to see the info screen
+
+### Project Goals
+
+the main goal of this website is to create a positive, fun experience that will keep players returning
+
+* Simple design that is easy to navigate for all ages
+
+### Minimum Acceptance Criteria
+
+* Simple sleek bug free design
+* user friendly across devices
+
+# Development
+----
+
+## Design
+![idea 1](assets\images\idea1.png "idea2")
+This was the basic idea i was trying. Originally i wanted to go for a retro style game with a game input board, however i decided this was too bulky and not really easy to navigate. i decided to recreate with the idea below.
+![idea 2](assets\images\idea2.png "idea1")
+This is the final idea i settled with. minimalist and easy, i felt this created a more positive enviroment for people to enjoy the game.
+in this i removed the input board and decided to use the central buttons instead
