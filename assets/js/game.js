@@ -103,84 +103,9 @@ function play(gameArray){
     setTimeout(() => {
     guesses()
     /* this checks the two arrays to see if they match*/
-    checkButton.addEventListener('click', function(){
-        on = false;
-        let array1 = gameArray
-        let array2 = guessArray
-        console.log('gamearray', array1)
-        console.log('guessarray', array2)
-        /* lines 100 and 101 taken from stack overflow */
-        var matching = (array1.length == array2.length) && array1.every(function(element, index){
-            return element === array2[index]
-    })
-            console.log(matching)
-            if(matching === true){
-                console.log('you won')
-                win.style.display = 'block';
-                var newLv = lv
-                var newLv = ++newLv;
-                lv = newLv
-                return
-            }else {
-                console.log('you lost')
-                lose.style.display = 'block';
-                return
-            }
-    })
+ 
 },2000 * lv)
 }
-
-
-
-
-/**
- * function that listens for input from user
- */
-function guesses(){
-    /* this connects to the back button, to remove from the array and remove divs*/
-    backButton.addEventListener('click', function(){
-        guessArray.pop();
-        console.log(guessArray)
-        $('#trackerinner').children().last().remove()
-        })
-    purple.addEventListener('click', function(){
-        var q = 1
-        console.log(q)
-        guessArray.push(q)
-        purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
-        addBlock(q)
-        setTimeout(() => {
-        purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
-        },500)})
-    green.addEventListener('click', function(){
-        var q = 2
-        console.log(q)
-        guessArray.push(q)
-        green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
-        addBlock(q)
-        setTimeout(() => {
-        green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
-        },500)})
-    red.addEventListener('click', function(){
-        var q = 3
-        console.log(q)
-        guessArray.push(q) 
-        red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
-        addBlock(q)
-        setTimeout(() => {
-        red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
-        },500)})
-    blue.addEventListener('click', function(){
-        var q = 4
-        console.log(q)
-        guessArray.push(q)
-        blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
-        addBlock(q)
-        setTimeout(() => {
-        blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
-        },500)}
-        )}
-    
     /**
      * this function adds a block each time a guess is made 
      */
@@ -208,18 +133,94 @@ function guesses(){
 
     }
 
-    function disablable(fn) {
+      /* test code */
+    /**
+     * function to remove event listeners from running.
+     */
+    function remove(){
+        purple.removeEventListener('click', purpleF)
+        green.removeEventListener('click', greenF)
+        red.removeEventListener('click', redF)
+        blue.removeEventListener('click', blueF)
+        backButton.removeEventListener('click', backF)
+        checkButton.removeEventListener('click', checkF)
+    }
+    function guesses(){
+        purple.addEventListener('click', purpleF)
+        green.addEventListener('click', greenF)
+        red.addEventListener('click', redF)
+        blue.addEventListener('click', blueF)
+        backButton.addEventListener('click', backF)
+        checkButton.addEventListener('click', checkF)
 
-        function inner() {
-          if (!enabled) return;
-          fn();
-        }
-      
-        var enabled = true;
-      
-        inner.enable  = function() { enabled = true; };
-        inner.disable = function() { enabled = false; };
-      
-        return inner;
-      
-      }
+    }
+    function purpleF(){
+        var q = 1
+        console.log(q)
+        guessArray.push(q)
+        purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
+        },500)
+    }
+    function greenF(){
+        var q = 2
+        console.log(q)
+        guessArray.push(q)
+        green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
+        },500)
+    }
+    function redF(){
+        var q = 3
+        console.log(q)
+        guessArray.push(q) 
+        red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
+        },500)
+    }
+    function blueF(){
+        var q = 4
+        console.log(q)
+        guessArray.push(q)
+        blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
+        addBlock(q)
+        setTimeout(() => {
+        blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
+        },500)
+    }
+    function backF(){
+        guessArray.pop();
+        console.log(guessArray)
+        $('#trackerinner').children().last().remove()
+    }
+function checkF(){
+    let array1 = gameArray
+    let array2 = guessArray
+    console.log('gamearray', array1)
+    console.log('guessarray', array2)
+    /* lines 100 and 101 taken from stack overflow */
+    var matching = (array1.length == array2.length) && array1.every(function(element, index){
+        return element === array2[index]
+    })
+    console.log(matching)
+    if(matching === true){
+        console.log('you won')
+        win.style.display = 'block';
+        var newLv = lv
+        var newLv = ++newLv;
+        lv = newLv
+        remove()
+        return
+    }else {
+        console.log('you lost')
+        lose.style.display = 'block';
+        remove()
+        return
+    }
+}
