@@ -19,22 +19,20 @@ Live Site
 - [Development](#development)
   - [Design](#Design)
     - [Notable Design Decisions](#notable-design-decisions)
-  - [Testing](#testing)
+- [Testing](#testing)
     - [During Code Testing](#during-code-testing)
     - [Final Testing](#final-testing)
       - [User Comments](#user-comments)
       - [Personal Testing](#personal-testing)
   - [Features implemented](#features-implemented)
-
   - [Planned Features](#planned-features)
   - [Technologies Used](#technologies-used)
-
   - [Issues](#issues)
     - [Known Bugs](#known-bugs)
     - [Fixed Bugs](#fixed-bugs)
-  - [Deployment](#deployment)
+- [Deployment](#deployment)
     - [Process](#process)
-    - [Enccounted Issues](#encounted-issues)
+    - [Encounted Issues](#encounted-issues)
 - [Credits](#credits)
 
 # UX
@@ -156,3 +154,14 @@ The Deployment of the project was as follows:
 
 ### Encounted Issues
 Luckily i had no deployment issues, all deployed as expected
+
+# Credits
+---
+## Code aid
+* StackOverflow
+* StackAbuse
+* Pasquale Fasulo(COBC Tutor)
+
+## Testing
+* My Team At PML
+* Family Programmers
