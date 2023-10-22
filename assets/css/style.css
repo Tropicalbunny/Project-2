@@ -162,18 +162,18 @@ body {
     background-color: #1E1E1E;
     position: absolute;
     left: 50%;
-    bottom: 30%;
+    bottom: 20%;
     transform:translate(-50%);
-    width: 440px;
-    height:320px;
+    width: 700px;
+    height:500px;
     padding:20px;
     border-radius: 15px;
     display: flex;
 }
 #info-image{
-    width:410px;
-    height:300px;
-    background: url("../images/Instructions.png") no-repeat center center;
+    width:700px;
+    height:500px;
+    background: url("../images/information.png") no-repeat center center;
     background-size: cover;
 }
 #info-close{
