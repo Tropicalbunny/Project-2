@@ -35,7 +35,7 @@ body {
 }
 .title{
     color: azure;
-    font-size: 200%;
+    font-size: 500%;
     text-align: center;
 }
 
@@ -50,6 +50,7 @@ body {
     display: flex;
     justify-content: center;
 }
+/* start button */
 .buttongame{
     border-radius: 100%;
     height:30px;
@@ -62,6 +63,7 @@ body {
 .buttongame:hover{
     background-color:aqua ;
 }
+/*info button  */
 #infohome {
     list-style-type: none;
     color: #FFFFFF;
@@ -159,10 +161,10 @@ body {
 /* styling for info popup */
 #info{
     background-color: #1E1E1E;
-    position: absolute;
+    position: relative;
     left: 50%;
-    bottom: 20%;
     transform:translate(-50%);
+    text-align: center;
     width: 700px;
     height:500px;
     padding:20px;
@@ -230,7 +232,26 @@ body {
     display:none;
 }
 
+/* responsive design styles */
+@media  screen and (max-width: 768px)  {
+    #info{
+        width: 500px;
+        height:300px;
+    }
+    #info-image{
+        width:500px;
+        height:300px;
+    }
+}
 @media screen and (max-width: 475px) {
+    #info{
+        width: 300px;
+        height:200px;
+    }
+    #info-image{
+        width:300px;
+        height:200px;
+    }
 .selector-outer{
     height:51px;
 }
