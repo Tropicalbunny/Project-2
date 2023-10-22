@@ -20,7 +20,6 @@ Live Site
   - [Design](#Design)
     - [Notable Design Decisions](#notable-design-decisions)
   - [Testing](#testing)
-    - [Pre code Testing](#pre-code-testing)
     - [During Code Testing](#during-code-testing)
     - [Final Testing](#final-testing)
       - [User Comments](#user-comments)
@@ -81,4 +80,6 @@ I moved the info screen to a button press in both the main menu and in game. thi
 
 ## Testing
 
-### Pre Code Testing
+### During Code Testing
+![console logs](assets/images/consolelog "console log")
+I consitiently used "console.log" to keep on each function, i labeled them as well so i knew at want point in the function they triggered. this helped me understand where variables where being missed.
