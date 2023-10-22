@@ -54,7 +54,6 @@ function buildQuestion(lv){
     var q = Math.floor(Math.random() * 4 ) + 1;
     myArray.push(q)
     }
-console.log('build', myArray)
 var gameArray = myArray
 return gameArray
 }
@@ -71,11 +70,8 @@ function round(){
  * this changes the images depending on the number in the Array
  */
 function play(playArray){
-    console.log('play', playArray)
     for (let i = 0; i < lv ; i++){
         setTimeout(() => {
-        console.log(playArray[i])
-
             
         if (playArray[i] === 1){
             purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
@@ -112,7 +108,6 @@ function play(playArray){
      * this function adds a block each time a guess is made 
      */
     function addBlock(color){
-        console.log('color', color)
         if (color === 1){
             var block = document.createElement('div')
             block.classList.add('blockpurple')
@@ -163,7 +158,6 @@ function play(playArray){
     /*functions to tell listeners what to do*/
     function purpleF(){
         var q = 1
-        console.log(q)
         guessArray.push(q)
         purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
         addBlock(q)
@@ -173,7 +167,6 @@ function play(playArray){
     }
     function greenF(){
         var q = 2
-        console.log(q)
         guessArray.push(q)
         green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
         addBlock(q)
@@ -183,7 +176,6 @@ function play(playArray){
     }
     function redF(){
         var q = 3
-        console.log(q)
         guessArray.push(q) 
         red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
         addBlock(q)
@@ -193,7 +185,6 @@ function play(playArray){
     }
     function blueF(){
         var q = 4
-        console.log(q)
         guessArray.push(q)
         blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
         addBlock(q)
@@ -203,21 +194,16 @@ function play(playArray){
     }
     function backF(){
         guessArray.pop();
-        console.log(guessArray)
         $('#trackerinner').children().last().remove()
     }
 function checkF(){
     let array1 = gameArray
     let array2 = guessArray
-    console.log('gamearray', array1)
-    console.log('guessarray', array2)
     /* lines 100 and 101 taken from stack overflow */
     var matching = (array1.length == array2.length) && array1.every(function(element, index){
         return element === array2[index]
     })
-    console.log(matching)
     if(matching === true){
-        console.log('you won')
         win.style.display = 'block';
         var newLv = lv
         var newLv = ++newLv;
@@ -225,7 +211,6 @@ function checkF(){
         remove()
         return
     }else {
-        console.log('you lost')
         lose.style.display = 'block';
         var newLv = 3
         lv = newLv
