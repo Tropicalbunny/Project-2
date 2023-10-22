@@ -82,4 +82,77 @@ I moved the info screen to a button press in both the main menu and in game. thi
 
 ### During Code Testing
 ![console logs](assets/images/consolelog.png "console log")
-I consitiently used "console.log" to keep on each function, i labeled them as well so i knew at want point in the function they triggered. this helped me understand where variables where being missed.
+
+I consitiently used "console.log" to keep an eye on each function, i labeled them as well so i knew at want point in the function they triggered. this helped me understand where variables where being missed.
+
+i had a major issue where the listeners would duplicate, to solve this i seperated each listener into their own function. allowing me to freely add and remove them based on whether it is the players turn.
+![listeners old](assets/images/listenersold.png "listeners old") 
+
+here you can see i held all of the code for what the listeners needed to do under one function.
+![listeners new](assets/images/listenersnew.png "listeners new") 
+
+here i rewrote it so that the listeners called thier own function, this meant i could precisely change when i wanted the listeners active or not.
+
+### Final Testing
+
+#### User Comments
+
+#### Personal Testing
+
+* Checked the functionality of the game, and confirmed it is working
+* Used EDGE built in function to sest across multiple devices and confrimed they work.
+
+## Features Implemented
+The game consits of two webpages accessable through buttons.
+
+#### Seperate information 
+I kept the information screen in a seperate popup, this is so returning users do not need to see it, i also added a button on the game itself so you can refer back if you need too.
+#### Landing Page
+I created a landing page so you didnt immediately land into the game, this was a personal choice as i like to have a main menu before diving into a game.
+
+## Planned Features
+i have a few planned features that didnt make it into this final build
+* A colourblind mode, where numbers are added to the segments.
+* Quirks, little changes in the game to add a sense of wimsicle difficulty
+* Seperate difficulty levels, that added extra buttons to the main menu allowing you to pick from easy medium or hard, this would add extra segments you can click from.
+
+## Technologies Used
+* HTML 5
+* CSS 3
+* JAVASCRIPT
+* jQuery
+* Font Awesome
+* Figma
+* Github
+* Gitpod
+* Virtual studio
+
+## Issues
+---
+### Known Bugs
+To my Knowledge there is no known bugs
+### Fixed Bugs
+* game array wasnt writing outside of array.
+* segments where enlarging while game was lighting them
+
+
+## Deployment
+
+---
+
+### Process
+
+Process for deploying a front end website was fairly easy. as i have all my commits and main branch on Gitpod it made the most sense to deploy on there as well, i used their deployment Gitpod Pages.
+
+The Deployment of the project was as follows:
+
+* Use this link https://github.com/Tropicalbunny/Project-2 to get to my repo, login as yourself and click code
+* Clone a copy for yourself
+* Once you have a copy, head to settings on the navigation bar.
+* Under code and automation, click pages
+* You change source to "deploy from branch"
+* The branch will be "main" and "/root" you then click save.
+* The deployment process can take a few minutes, let this complete you can see the progress on the code page under Enviroments.
+
+### Encounted Issues
+Luckily i had no deployment issues, all deployed as expected
