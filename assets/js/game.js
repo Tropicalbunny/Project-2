@@ -6,24 +6,23 @@
 
 //variables
 var lv = 2;
-var gameArray = []
-var guessArray = []
-var on = false
+var gameArray = [];
+var guessArray = [];
+let x = 0
 
-let startButton = document.getElementById('startbutton')
-let startButtonContainer = document.getElementById('startbutton-container')
-let purple = document.getElementById('purple')
-let green = document.getElementById('green')
-let red = document.getElementById('red')
-let blue = document.getElementById('blue')
-let checkButton = document.getElementById('checkButton')
-let trackerInner = document.getElementById('trackerinner')
-
-let win = document.getElementById('win')
-let lose = document.getElementById('lose')
-let nextLevel = document.getElementById('nextlevel')
-let home = document.getElementById('home1', 'home2')
-let restart = document.getElementById('restart')
+const startButton = document.getElementById('startbutton')
+const startButtonContainer = document.getElementById('startbutton-container')
+const purple = document.getElementById('purple')
+const green = document.getElementById('green')
+const red = document.getElementById('red')
+const blue = document.getElementById('blue')
+const checkButton = document.getElementById('checkButton')
+const trackerInner = document.getElementById('trackerinner')
+const win = document.getElementById('win')
+const lose = document.getElementById('lose')
+const nextLevel = document.getElementById('nextlevel')
+const home = document.getElementById('home1', 'home2')
+const restart = document.getElementById('restart')
 
 nextLevel.addEventListener('click', function(){
     win.style.display = 'none';
@@ -102,25 +101,7 @@ function play(gameArray){
 
     },2500 * i)}
     setTimeout(() => {
-        on = true;
-        // guesses()
-       
-},2000 * lv)
-}
-
-
-
-/**
- * function that listens for input from user
- */
-// function guesses(){
-    if (on = true){
-     /* this connects to the back button, to remove from the array and remove divs*/
-     backButton.addEventListener('click', function(){
-        guessArray.pop();
-        console.log(guessArray)
-        $('#trackerinner').children().last().remove()
-        })
+    guesses()
     /* this checks the two arrays to see if they match*/
     checkButton.addEventListener('click', function(){
         on = false;
@@ -132,24 +113,36 @@ function play(gameArray){
         var matching = (array1.length == array2.length) && array1.every(function(element, index){
             return element === array2[index]
     })
-        console.log(matching)
+            console.log(matching)
             if(matching === true){
                 console.log('you won')
                 win.style.display = 'block';
                 var newLv = lv
-                console.log('before', newLv)
                 var newLv = ++newLv;
-                console.log('after', newLv)
                 lv = newLv
                 return
             }else {
                 console.log('you lost')
                 lose.style.display = 'block';
                 return
-        }
-        })    
+            }
+    })
+},2000 * lv)
+}
 
 
+
+
+/**
+ * function that listens for input from user
+ */
+function guesses(){
+    /* this connects to the back button, to remove from the array and remove divs*/
+    backButton.addEventListener('click', function(){
+        guessArray.pop();
+        console.log(guessArray)
+        $('#trackerinner').children().last().remove()
+        })
     purple.addEventListener('click', function(){
         var q = 1
         console.log(q)
@@ -185,9 +178,9 @@ function play(gameArray){
         addBlock(q)
         setTimeout(() => {
         blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
-        },500)})}
+        },500)}
+        )}
     
-
     /**
      * this function adds a block each time a guess is made 
      */
@@ -214,3 +207,19 @@ function play(gameArray){
         }
 
     }
+
+    function disablable(fn) {
+
+        function inner() {
+          if (!enabled) return;
+          fn();
+        }
+      
+        var enabled = true;
+      
+        inner.enable  = function() { enabled = true; };
+        inner.disable = function() { enabled = false; };
+      
+        return inner;
+      
+      }
