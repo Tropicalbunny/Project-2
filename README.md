@@ -81,5 +81,5 @@ I moved the info screen to a button press in both the main menu and in game. thi
 ## Testing
 
 ### During Code Testing
-![console logs](assets/images/consolelog "console log")
+![console logs](assets/images/consolelog.png "console log")
 I consitiently used "console.log" to keep on each function, i labeled them as well so i knew at want point in the function they triggered. this helped me understand where variables where being missed.
