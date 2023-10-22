@@ -5,10 +5,9 @@
 
 
 //variables
-var lv = 2;
+var lv = 3;
 var gameArray = [];
 var guessArray = [];
-let x = 0
 
 const startButton = document.getElementById('startbutton')
 const startButtonContainer = document.getElementById('startbutton-container')
