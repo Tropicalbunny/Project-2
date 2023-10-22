@@ -6,7 +6,7 @@
 
 Charlie says is an interactive game of simon says.
 
-Live Site
+Live Site https://tropicalbunny.github.io/Project-2
 
 ## Table of content
 
