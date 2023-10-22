@@ -71,23 +71,24 @@ function round(){
 /**
  * this changes the images depending on the number in the Array
  */
-function play(gameArray){
-    console.log('play', gameArray)
+function play(playArray){
+    console.log('play', playArray)
     for (let i = 0; i < lv ; i++){
         setTimeout(() => {
-        console.log(gameArray[i])
+        console.log(playArray[i])
+
             
-        if (gameArray[i] === 1){
+        if (playArray[i] === 1){
             purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
             setTimeout(() => {
             purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
             },2000)
-        } else if (gameArray[i] === 2){
+        } else if (playArray[i] === 2){
             green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
             setTimeout(() => {
             green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
             },2000)
-        } else if (gameArray[i] === 3 ){
+        } else if (playArray[i] === 3 ){
             red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
             setTimeout(() => {
             red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
@@ -102,6 +103,8 @@ function play(gameArray){
     },2500 * i)}
     setTimeout(() => {
     guesses()
+    gameArray = playArray
+    return gameArray
     /* this checks the two arrays to see if they match*/
  
 },2000 * lv)
@@ -145,6 +148,9 @@ function play(gameArray){
         backButton.removeEventListener('click', backF)
         checkButton.removeEventListener('click', checkF)
     }
+    /**
+     * function to add listeners
+     */
     function guesses(){
         purple.addEventListener('click', purpleF)
         green.addEventListener('click', greenF)
@@ -154,6 +160,8 @@ function play(gameArray){
         checkButton.addEventListener('click', checkF)
 
     }
+
+    /*functions to tell listeners what to do*/
     function purpleF(){
         var q = 1
         console.log(q)
@@ -220,6 +228,8 @@ function checkF(){
     }else {
         console.log('you lost')
         lose.style.display = 'block';
+        var newLv = 3
+        lv = newLv
         remove()
         return
     }
