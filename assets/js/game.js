@@ -74,21 +74,57 @@ function play(playArray){
         setTimeout(() => {
             
         if (playArray[i] === 1){
+            var context = new AudioContext()
+            var o = context.createOscillator()
+            var  g = context.createGain()
+            o.connect(g)
+            g.connect(context.destination)
+            o.start(0)
+            var frequency = 261.6
+            o.frequency.value = frequency
+            g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 2)
             purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
             setTimeout(() => {
             purple.style.background = 'url("assets/images/purple.png") no-repeat center center /cover';  
             },2000)
         } else if (playArray[i] === 2){
+            var context = new AudioContext()
+            var o = context.createOscillator()
+            var  g = context.createGain()
+            o.connect(g)
+            g.connect(context.destination)
+            o.start(0)
+            var frequency =  293.7
+            o.frequency.value = frequency
+            g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 2)
             green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
             setTimeout(() => {
             green.style.background = 'url("assets/images/green.png") no-repeat center center /cover';  
             },2000)
         } else if (playArray[i] === 3 ){
+            var context = new AudioContext()
+            var o = context.createOscillator()
+            var  g = context.createGain()
+            o.connect(g)
+            g.connect(context.destination)
+            o.start(0)
+            var frequency =  329.6
+            o.frequency.value = frequency
+            g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 2)
             red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
             setTimeout(() => {
             red.style.background = 'url("assets/images/red.png") no-repeat center center /cover';  
             },2000)
         } else {
+            var context = new AudioContext()
+            var o = context.createOscillator()
+            var  g = context.createGain()
+            o.connect(g)
+            g.connect(context.destination)
+            o.start(0)
+            var frequency = 392.0
+            o.frequency.value = frequency
+            g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 2)
             blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
             setTimeout(() => {
             blue.style.background = 'url("assets/images/blue.png") no-repeat center center /cover';  
@@ -159,6 +195,15 @@ function play(playArray){
     function purpleF(){
         var q = 1
         guessArray.push(q)
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var  g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        var frequency = 261.6
+        o.frequency.value = frequency
+        g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1)
         purple.style.background = 'url("assets/images/purplelit.png") no-repeat center center /cover';
         addBlock(q)
         setTimeout(() => {
@@ -168,6 +213,15 @@ function play(playArray){
     function greenF(){
         var q = 2
         guessArray.push(q)
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var  g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        var frequency =  293.7
+        o.frequency.value = frequency
+        g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1)
         green.style.background = 'url("assets/images/greenlit.png") no-repeat center center /cover';
         addBlock(q)
         setTimeout(() => {
@@ -177,6 +231,15 @@ function play(playArray){
     function redF(){
         var q = 3
         guessArray.push(q) 
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var  g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        var frequency =  329.6
+        o.frequency.value = frequency
+        g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1)
         red.style.background = 'url("assets/images/redlit.png") no-repeat center center /cover';
         addBlock(q)
         setTimeout(() => {
@@ -186,6 +249,15 @@ function play(playArray){
     function blueF(){
         var q = 4
         guessArray.push(q)
+        var context = new AudioContext()
+        var o = context.createOscillator()
+        var  g = context.createGain()
+        o.connect(g)
+        g.connect(context.destination)
+        o.start(0)
+        var frequency = 392.0
+        o.frequency.value = frequency
+        g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1)
         blue.style.background = 'url("assets/images/bluelit.png") no-repeat center center /cover';
         addBlock(q)
         setTimeout(() => {
