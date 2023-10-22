@@ -269,5 +269,14 @@ body {
     width:150px;
     left:5px;
 }
+.winlose{
+    height:50px;
+    width: 225px;
+    padding:15px;
+}
+.initbuttons{
+    height:25px;
+    width:100px;
+}
     
 }
