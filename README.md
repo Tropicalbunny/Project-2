@@ -22,7 +22,7 @@ Live Site https://tropicalbunny.github.io/Project-2
 - [Testing](#testing)
     - [During Code Testing](#during-code-testing)
     - [Final Testing](#final-testing)
-      - [User Comments](#user-comments)
+      - [User Testing](#user-testing)
       - [Personal Testing](#personal-testing)
   - [Features implemented](#features-implemented)
   - [Planned Features](#planned-features)
@@ -77,7 +77,7 @@ in this i removed the input board and decided to use the central buttons instead
 I moved the info screen to a button press in both the main menu and in game. this was so returning users didnt need to see it every time they replayed, this also meant i could keep it there incase people needed reminding of the controls.
 
 ## Testing
-
+---
 ### During Code Testing
 ![console logs](assets/images/consolelog.png "console log")
 
@@ -93,7 +93,11 @@ here i rewrote it so that the listeners called thier own function, this meant i 
 
 ### Final Testing
 
-#### User Comments
+#### User Testing
+
+I had some issues when checking on a samsung s10, the text was not making itself small. little modification to the code and now its sorted. 
+![issue1](assets/images/issue1.png "issue 1")
+![issue1fixed](assets/images/issue1fixed.png "issue 1 fixed")
 
 #### Personal Testing
 
@@ -128,10 +132,11 @@ i have a few planned features that didnt make it into this final build
 ## Issues
 ---
 ### Known Bugs
-To my Knowledge there is no known bugs
+* font does not load on s10, updated to have the font as a file. this did not fix the issue.
 ### Fixed Bugs
-* game array wasnt writing outside of array.
-* segments where enlarging while game was lighting them
+* Game array wasnt writing outside of function.
+* Segments where enlarging while game was lighting them
+* Code double running on round 2
 
 
 ## Deployment
