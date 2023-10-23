@@ -151,7 +151,8 @@ body {
 }
 #trackerinner{
     height:30px;
-    width:360px;
+    width:350px;
+    margin:0 5px;
     display: flex;
     justify-content: center;
 }
@@ -280,7 +281,6 @@ body {
     #info-image{
         width:256px;
         height:290px;
-        background: url("../images/informationphone.jpg") no-repeat center center/ cover;
     }
     #title-text-container{
         height:100px;
@@ -308,7 +308,7 @@ body {
     }
     #trackerinner{
         width:150px;
-        left:5px;
+        margin:0 5px;
     }
     .winlose{
         height:50px;
