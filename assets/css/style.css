@@ -274,12 +274,12 @@ body {
 }
 @media screen and (max-width: 475px) {
     #info{
-        width: 156px;
-        height:190px;
+        width: 256px;
+        height:290px;
     }
     #info-image{
-        width:156px;
-        height:190px;
+        width:256px;
+        height:290px;
         background: url("../images/informationphone.jpg") no-repeat center center/ cover;
     }
     #title-text-container{
