@@ -96,8 +96,8 @@ here i rewrote it so that the listeners called thier own function, this meant i 
 #### User Testing
 
 I had some issues when checking on a samsung s10, the text was not making itself small. little modification to the code and now its sorted. 
-![issue1](assets/images/issue1.png "issue 1")
-![issue1fixed](assets/images/issue1fixed.png "issue 1 fixed")
+![issue1](assets/images/issue1.jpg "issue 1")
+![issue1fixed](assets/images/issue1fixed.jpg "issue 1 fixed")
 
 #### Personal Testing
 
