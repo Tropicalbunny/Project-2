@@ -74,17 +74,23 @@ body {
     list-style-type: none;
     color: #FFFFFF;
     text-align: Right;
+    display: flex;
+    justify-content: right;
     padding: 0;
+    padding-top:5px;
 }
 #roundCounter {
     width:200px;
     display: flex;
     justify-content: left;
+    padding: 0;
+    padding-top:5px;
 
 
 }
 #roundNumber{
     width:100px;
+    font-size:x-large;
 }
 #round{
     width: 100px;
