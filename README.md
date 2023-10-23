@@ -104,6 +104,9 @@ I had some issues when checking on a samsung s10, the text was not making itself
 * Checked the functionality of the game, and confirmed it is working
 * Used EDGE built in function to sest across multiple devices and confrimed they work.
 
+My code has passed both the jogsaw css validator and the html code validator from w3c schools.
+![htmlcodepass](assets/images/htmlcodepass.png "html code pass")
+
 ## Features Implemented
 The game consits of two webpages accessable through buttons.
 
@@ -132,7 +135,9 @@ i have a few planned features that didnt make it into this final build
 ## Issues
 ---
 ### Known Bugs
-* font does not load on s10, updated to have the font as a file. this did not fix the issue.
+* font does not load on s10, updated to have the font as a file. this did not fix the issue. as this bug couldnt be recreated on other devices i decided more testing on similar devices is needed, for which i do not have access.
+* Notes on Phones randomly stop functioning after round 2. I had trouble consitently recreating this bug so it has been difficult to track down, I decided that this is a bug that will be fixed in future updates as this does not affect core functionality.
+* If you start the game too quickly the segments take a split second to load into the page, as this is a minor bug i belive i can fix this in a future update with "window.onload". but as of now it does not affect functionality.
 ### Fixed Bugs
 * Game array wasnt writing outside of function.
 * Segments where enlarging while game was lighting them

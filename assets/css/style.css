@@ -263,22 +263,24 @@ body {
 /* responsive design styles */
 @media  screen and (max-width: 768px)  {
     #info{
-        width: 500px;
-        height:300px;
+        width: 335px;
+        height:379px;
     }
     #info-image{
-        width:500px;
-        height:300px;
+        width:335px;
+        height:379px;
+        background: url("../images/informationphone.jpg") no-repeat center center/ cover;
     }
 }
 @media screen and (max-width: 475px) {
     #info{
-        width: 300px;
-        height:200px;
+        width: 156px;
+        height:190px;
     }
     #info-image{
-        width:300px;
-        height:200px;
+        width:156px;
+        height:190px;
+        background: url("../images/informationphone.jpg") no-repeat center center/ cover;
     }
     #title-text-container{
         height:100px;
