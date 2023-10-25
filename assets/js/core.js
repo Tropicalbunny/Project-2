@@ -17,7 +17,7 @@ infoClose.addEventListener('click', function(){
 //page transition
 
 window.transitionToPage = function(href) {
-    document.querySelector('body').style.opacity = 0.1
+    document.querySelector('body').style.opacity = 0
     setTimeout(function() { 
         window.location.href = href
     }, 500)
