@@ -48,22 +48,23 @@
     </div>
 </section>
 <!--popups-->
-<div id="info-container">
+<section>
+    <div id="info-container">
     <div id="info">
         <div id="info-image"></div>
         <div id="info-close">&times;</div>
     </div>
-</div>
-<div class="winlose" id="win">
-    <div>
-        <p>You have passed the level, move onto next level?</p>
     </div>
-    <div>
-        <button class="initbuttons" id="nextlevel">Hell Yeah!</button>
-        <button class="initbuttons" id="home1" onclick="transitionToPage('index.html')">No Thank You</button>
+    <div class="winlose" id="win">
+        <div>
+            <p>You have passed the level, move onto next level?</p>
+        </div>
+        <div>
+            <button class="initbuttons" id="nextlevel">Hell Yeah!</button>
+            <button class="initbuttons" id="home1" onclick="transitionToPage('index.html')">No Thank You</button>
+        </div>
     </div>
-</div>
-<div class="winlose" id="lose">
+    <div class="winlose" id="lose">
     <div>
         <p>You have failed the level, try again??</p>
     </div>
@@ -71,7 +72,8 @@
         <button class="initbuttons" id="restart" onclick="transitionToPage('gameboard.html')">Hell Yeah!</button>
         <button class="initbuttons" id="home2" onclick="transitionToPage('index.html')">No Thank You</button>
     </div>
-</div>
+    </div>
+</section>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/game.js"></script>

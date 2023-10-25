@@ -1,7 +1,7 @@
 // game code
 // taken from Stackabuse
-//setTimeout(() => {},1000);
-//this will be used throught 
+// setTimeout(() => {},1000);
+// this will be used throught 
 
 
 //variables
@@ -136,7 +136,7 @@ function play(playArray){
     guesses()
     gameArray = playArray
     return gameArray
-    /* this checks the two arrays to see if they match*/
+    // this checks the two arrays to see if they match
  
 },2000 * lv)
 }
@@ -166,7 +166,6 @@ function play(playArray){
 
     }
 
-      /* test code */
     /**
      * function to remove event listeners from running.
      */
@@ -179,7 +178,7 @@ function play(playArray){
         checkButton.removeEventListener('click', checkF)
     }
     /**
-     * function to add listeners
+     * function to add event listeners
      */
     function guesses(){
         purple.addEventListener('click', purpleF)
@@ -191,7 +190,8 @@ function play(playArray){
 
     }
 
-    /*functions to tell listeners what to do*/
+    //functions for listeners to call
+
     function purpleF(){
         var q = 1
         guessArray.push(q)
@@ -268,25 +268,25 @@ function play(playArray){
         guessArray.pop();
         $('#trackerinner').children().last().remove()
     }
-function checkF(){
-    let array1 = gameArray
-    let array2 = guessArray
-    /* lines 100 and 101 taken from stack overflow */
-    var matching = (array1.length == array2.length) && array1.every(function(element, index){
-        return element === array2[index]
-    })
-    if(matching === true){
-        win.style.display = 'block';
-        var newLv = lv
-        var newLv = ++newLv;
-        lv = newLv
-        remove()
-        return
-    }else {
-        lose.style.display = 'block';
-        var newLv = 3
-        lv = newLv
-        remove()
-        return
+    function checkF(){
+        let array1 = gameArray
+        let array2 = guessArray
+        /* lines 275 and 276 taken from stack overflow */
+        var matching = (array1.length == array2.length) && array1.every(function(element, index){
+            return element === array2[index]
+        })
+        if(matching === true){
+            win.style.display = 'block';
+            var newLv = lv
+            var newLv = ++newLv;
+            lv = newLv
+            remove()
+            return
+        }else {
+            lose.style.display = 'block';
+            var newLv = 3
+            lv = newLv
+            remove()
+            return
+        }
     }
-}
