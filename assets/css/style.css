@@ -253,6 +253,9 @@ body {
     top:30%;
     transform:translate(-50%);
 }
+.center{
+    text-align: center;
+}
 #win{
     display: none;
 }
