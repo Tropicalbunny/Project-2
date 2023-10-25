@@ -95,8 +95,13 @@ here i rewrote it so that the listeners called thier own function, this meant i 
 ### Final Testing
 ---
 #### User Testing
+I have had a range of phones testing the website to make sure it is functional. these are but not limited to:
+* Samsung s21 ultra and s10
+* Iphone 11, 12, 14 pro
 
-I had some issues when checking on a samsung s10, the text was not making itself small. little modification to the code and now its sorted. 
+Intrestingly i uncovered a bug where the beeps from each flash randomly stop sounding, my s21 stopped sounding after round one while an iphone 12 stopped sounding after just 2 flashes. testing across a wider range of phones only made the bug more confusing. it is inconsistent across devices
+
+I had some issues when checking on a samsung s10, the text was not making itself small. little modification to the code and now its sorted. there is another issue here, where the font is not updating to the expected font. i added a ttf file to try and fix this, unfortunately this did not work. as i am unable to recreate this across any other devices i decided it was best to look again in a future version. 
 ![issue1](assets/images/issue1.jpg "issue 1")
 ![issue1fixed](assets/images/issue1fixed.jpg "issue 1 fixed")
 
@@ -105,8 +110,10 @@ I had some issues when checking on a samsung s10, the text was not making itself
 * Checked the functionality of the game, and confirmed it is working
 * Used EDGE built in function to sest across multiple devices and confrimed they work.
 
-My code has passed both the jogsaw css validator and the html code validator from w3c schools.
+My code has passed both the jigsaw css validator and the html code validator from w3c schools.
 ![htmlcodepass](assets/images/htmlcodepass.png "html code pass")
+I also ran the code through Synk to check for any errors across all of the code. this came back with no issues 
+![synktest](assets/images/synktest.png "synk test")
 
 ## Features Implemented
 The game consits of two webpages accessable through buttons.
