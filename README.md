@@ -74,7 +74,8 @@ This is the final idea i settled with. minimalist and easy, i felt this created 
 in this i removed the input board and decided to use the central buttons instead
 
 ### Notable Design Decisions
-I moved the info screen to a button press in both the main menu and in game. this was so returning users didnt need to see it every time they replayed, this also meant i could keep it there incase people needed reminding of the controls.
+* I moved the info screen to a button press in both the main menu and in game. this was so returning users didnt need to see it every time they replayed, this also meant i could keep it there incase people needed reminding of the controls.
+* I have seperated the game code from the "core" code, this is so the user does not load the game until they move onto the game screen. saving on loading time and bandwidth.
 
 ## Testing
 ---
@@ -92,7 +93,7 @@ here you can see i held all of the code for what the listeners needed to do unde
 here i rewrote it so that the listeners called thier own function, this meant i could precisely change when i wanted the listeners active or not.
 
 ### Final Testing
-
+---
 #### User Testing
 
 I had some issues when checking on a samsung s10, the text was not making itself small. little modification to the code and now its sorted. 
